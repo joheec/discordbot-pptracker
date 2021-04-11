@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 let channelId;
 let mee6DashboardId;
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'prod') {
   channelId = process.env.DEV_DISCORD_CHANNEL_ID;
   mee6DashboardId = process.env.DEV_MEE6_DASHBOARD_ID;
 } else {
