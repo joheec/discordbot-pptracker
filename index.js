@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
   mee6DashboardId = process.env.PROD_MEE6_DASHBOARD_ID;
 }
 
-const numberOfLeaders = 10;
+const numberOfLeaders = process.env.USERS;
 const leaderboardUrl = `https://mee6.xyz/api/plugins/levels/leaderboard/${mee6DashboardId}?limit=${numberOfLeaders}&page=0`;
 const client = new Discord.Client();
 
