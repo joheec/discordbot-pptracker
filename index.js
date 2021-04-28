@@ -1,6 +1,7 @@
 require('dotenv').config();
 const fetch = require('isomorphic-fetch');
 const Discord = require('discord.js');
+const boards = require('./boards');
 
 let channelId;
 let mee6DashboardId;
@@ -30,16 +31,9 @@ client.login(process.env.DISCORD_BOT_TOKEN).then(async () => {
         }
         return res.json();
       })
-      .then(({ players }) => (
-        `\nPP LEADERBOARD\n${players.sort((a, b) => b.level - a.level).map(p => (
-          `<@${p.id}>: ${'👾'.repeat(p.level)}`
-        )).join('\n')}
-                                  !
-                                  !
-                                  !
-                           |--__| ^ |__--|`
-      ))
-      .then(leaderboardMsg => {
+      .then(({ players })=> {
+        const boardType = process.env.BOARD_TYPE;
+        const leaderboardMsg = boards[boardType](players.sort((a, b) => b.level - a.level));
         console.log('[LOG] Successfully formatted leaderboard data');
         channel.send(leaderboardMsg)
           .then(() => console.log('[LOG] Successfully sent leaderboard message'))

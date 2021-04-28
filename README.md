@@ -3,47 +3,22 @@
 This Discord Bot grabs data from the Mee6's leaderboard API and displays the top users' levels as a horizontal bar chart of :space_invader: emojis.
 A bash script, weekly-scheduler.sh, executes the bot instead of a node script to prevent posting everytime the Heroku app starts.
 
-Bash command to run prod
+Bash command to run prod with board type, spaceInvaders
 
 ```bash
-bash weekly-scheduler.sh -e env=prod
+bash weekly-scheduler.sh prod spaceInvaders
 ```
 
-Bash command to run prod
+Bash command to run prod with board type, spaceInvaders
 
 ```bash
-bash weekly-scheduler.sh -e env=dev
+bash weekly-scheduler.sh dev spaceInvaders
 ```
 
-## Bot Message
+## Bot Message Board Types
 
-PP LEADERBOARD
-
-@username: :space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader:
-
-@username: :space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader:
-
-@username: :space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader:
-
-@username: :space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader:
-
-@username: :space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader::space_invader:
-
-@username(she/her): :space_invader::space_invader:
-
-@username: :space_invader::space_invader:
-
-@username: :space_invader::space_invader:
-
-@username: :space_invader:
-
-@username: :space_invader:
-
-
-                                     !
-                                     !
-                                     !
-                                |--| ^ |--|
+- spaceInvaders
+- mario
 
 ## .env
 
@@ -73,10 +48,10 @@ To run as a weekly post, you can use Heroku. The Heroku add-on, Heroku Scheduler
 
 ```bash
 # PROD ENV
-heroku run bash weekly-scheduler.sh -e env=prod
+heroku run bash weekly-scheduler.sh prod
 
 # DEV ENV
-heroku run bash weekly-scheduler.sh -e env=dev
+heroku run bash weekly-scheduler.sh dev
 ```
 
 ## Customize
